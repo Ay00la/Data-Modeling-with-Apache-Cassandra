@@ -1,0 +1,29 @@
+Cassandra Project
+
+
+Making a `requirements.txt` file if you want others to use your project
+`pip3 freeze requirements.txt.`
+
+- I did this in a virtual env so that only the packages for the project would be installed.
+
+You could install those packages with
+`pip3 install -r requirements.txt`
+I don’t do this enough but it’s good practice and I need to start doing this more on a project by project basis. 
+
+I’m starting to do all my projects in their own virtual environment so that package dependencies do not conflict. I would look into `venv`
+
+- some people like `conda` but I am not a fan because I have faced dependency issues in that past so decicded to stay away.
+
+I liked how you checked for the ‘’ (blank values) in the first column when writing the values of the list to the new file (a form of testing)
+
+
+Could be improved:
+query: `copy_music_session`
+
+What I would do moving forward:
+
+- instead of going row by row in the csv, a copy command would bulk insert all the rows
+- the only problem I have run into is the copy command as the python cql driver does not support that → I would suggest figuring out how to do this. I’ve done it in postgres but not cassandra
+
+
+- One thing I did not work on was shutting down the cluster, but I do shut down the connection so maybe that inherently shuts down the cluster?
